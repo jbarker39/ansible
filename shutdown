@@ -1,0 +1,33 @@
+[utility-servers]
+util-1
+util-2
+#util-3
+10.0.0.43
+
+[web-servers]
+web1
+web2
+web4
+
+[dev-servers]
+dev1
+dev2
+
+[service]
+service-1 ansible_ssh_user=jbarker ansible_ssh_pass=Nicole100
+service-2 ansible_ssh_user=jbarker ansible_ssh_pass=Nicole100
+
+[openstack-servers]
+os-cntr-1 ansible_ssh_user=jbarker ansible_ssh_pass=Nicole100
+os-comp-1 ansible_ssh_user=jbarker ansible_ssh_pass=Nicole100
+
+[datacenter:children]
+utility-servers
+web-servers
+dev-servers
+service
+
+[datacenter:vars]
+ansible_ssh_user=jbarker
+ansible_ssh_pass=pioneer
+
