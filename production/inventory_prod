@@ -1,5 +1,5 @@
 [utility-servers]
-util-1
+#util-1
 util-2
 util-3
 
@@ -22,11 +22,18 @@ service-2 ansible_ssh_user=jbarker ansible_ssh_pass=Nicole100
 os-cntr-1 ansible_ssh_user=jbarker ansible_ssh_pass=Nicole100
 os-comp-1 ansible_ssh_user=jbarker ansible_ssh_pass=Nicole100
 
+[rhel]
+rh75server ansible_ssh_user=jbarker ansible_ssh_pass=Nicole100
+
+[ubuntu-server]
+ubuntu-server-1 ansible_ssh_user=jbarker ansible_ssh_pass=Nicole100
+
 [datacenter:children]
 utility-servers
 web-servers
 dev-servers
 service
+rhel
 
 [datacenter:vars]
 ansible_ssh_user=jbarker
